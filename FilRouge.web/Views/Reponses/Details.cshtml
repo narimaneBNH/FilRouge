@@ -1,0 +1,34 @@
+﻿@model FilRouge.Domain.Entities.Reponse
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reponse</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Question.LibelleQuestion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Question.LibelleQuestion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LibelleReponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LibelleReponse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdReponse }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

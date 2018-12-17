@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FilRouge.Domain.Entities.Question>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Niveau.NomNiveau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LibelleQuestion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReponseType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Niveau.NomNiveau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LibelleQuestion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReponseType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdQuestion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdQuestion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdQuestion })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,12 @@
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\FilRouge.exe.config
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\FilRouge.exe
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\FilRouge.pdb
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\EntityFramework.dll
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\EntityFramework.xml
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\obj\Debug\FilRouge.csprojAssemblyReference.cache
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\obj\Debug\FilRouge.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\obj\Debug\FilRouge.csproj.CopyComplete
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\obj\Debug\FilRouge.exe
+C:\Users\Administrateur\source\repos\FilRouge\FilRouge\obj\Debug\FilRouge.pdb
