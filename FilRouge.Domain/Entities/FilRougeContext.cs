@@ -16,13 +16,14 @@ namespace FilRouge.Domain.Entities
         {
         }
 
-        public virtual DbSet<Candidat> Candidat { get; set; }
-        public virtual DbSet<Quiz> Quiz { get; set; }
-        public virtual DbSet<Niveau> Niveau { get; set; }
-        public virtual DbSet<Ratio> Ratio { get; set; }
-        public virtual DbSet<Question> Question { get; set; }
-        public virtual DbSet<QuestionOption> QuestionOption { get; set; }
-        public virtual DbSet<Reponse> Reponse { get; set; }
+        public virtual DbSet<Candidat> Candidats { get; set; }
+        public virtual DbSet<Quiz> Quizzes { get; set; }
+        public virtual DbSet<Niveau> Niveaux { get; set; }
+        public virtual DbSet<Ratio> Ratios { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<QuestionOption> QuestionOptions { get; set; }
+        public virtual DbSet<Reponse> Reponses { get; set; }
+        public virtual DbSet<Technologie> Technologies { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,6 +40,6 @@ namespace FilRouge.Domain.Entities
             return new FilRougeContext();
         }
 
-        public System.Data.Entity.DbSet<FilRouge.Domain.Entities.Technologie> Technologies { get; set; }
+       
     }
 }

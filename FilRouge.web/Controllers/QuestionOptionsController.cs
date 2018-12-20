@@ -17,7 +17,7 @@ namespace FilRouge.web.Controllers
         // GET: QuestionOptions
         public ActionResult Index()
         {
-            var questionOption = db.QuestionOption.Include(q => q.Question);
+            var questionOption = db.QuestionOptions.Include(q => q.Question);
             return View(questionOption.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuestionOption questionOption = db.QuestionOption.Find(id);
+            QuestionOption questionOption = db.QuestionOptions.Find(id);
             if (questionOption == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,7 @@ namespace FilRouge.web.Controllers
         // GET: QuestionOptions/Create
         public ActionResult Create()
         {
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion");
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion");
             return View();
         }
 
@@ -48,16 +48,16 @@ namespace FilRouge.web.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdOption,NomOption,NomChoix,IdQuestion")] QuestionOption questionOption)
+        public ActionResult Create([Bind(Include = "IdOption,NomOption,NomChoix,IdQuestion,IsGood")] QuestionOption questionOption)
         {
             if (ModelState.IsValid)
             {
-                db.QuestionOption.Add(questionOption);
+                db.QuestionOptions.Add(questionOption);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion", questionOption.IdQuestion);
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion", questionOption.IdQuestion);
             return View(questionOption);
         }
 
@@ -68,12 +68,12 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuestionOption questionOption = db.QuestionOption.Find(id);
+            QuestionOption questionOption = db.QuestionOptions.Find(id);
             if (questionOption == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion", questionOption.IdQuestion);
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion", questionOption.IdQuestion);
             return View(questionOption);
         }
 
@@ -82,7 +82,7 @@ namespace FilRouge.web.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdOption,NomOption,NomChoix,IdQuestion")] QuestionOption questionOption)
+        public ActionResult Edit([Bind(Include = "IdOption,NomOption,NomChoix,IdQuestion,IsGood")] QuestionOption questionOption)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace FilRouge.web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion", questionOption.IdQuestion);
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion", questionOption.IdQuestion);
             return View(questionOption);
         }
 
@@ -101,7 +101,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuestionOption questionOption = db.QuestionOption.Find(id);
+            QuestionOption questionOption = db.QuestionOptions.Find(id);
             if (questionOption == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace FilRouge.web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QuestionOption questionOption = db.QuestionOption.Find(id);
-            db.QuestionOption.Remove(questionOption);
+            QuestionOption questionOption = db.QuestionOptions.Find(id);
+            db.QuestionOptions.Remove(questionOption);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

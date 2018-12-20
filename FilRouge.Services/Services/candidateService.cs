@@ -10,31 +10,42 @@ namespace FilRouge.Services.Services
 {
     public class CandidateService : ICandidateService
     {
-        //ajouter un candidat
+        /// <summary>
+        /// ajouter un candidat
+        /// </summary>
+        /// <param name="model"></param>
         public void AddNewCandidate(Candidat model)
         {
-            //ajouter un candidat à la table candidat
             //connexion avec dbContext
-            FilRougeContext dbContext = new FilRougeContext();
-            //ajouter à la table candidat le nouveau candidat via le context
-            dbContext.Candidat.Add(model);
-            dbContext.SaveChanges();
-           
+            using (FilRougeContext dbContext = new FilRougeContext())
+            { 
+                //ajouter à la table candidat le nouveau candidat via le context
+                dbContext.Candidats.Add(model);
+                dbContext.SaveChanges();
+            }
         }
-        //retourne la liste des candidats
+
+        /// <summary>
+        /// retourne la liste des candidats
+        /// </summary>
+        /// <returns></returns>
         public List<Candidat> GetCandidates()
         {
             //connexion avec dbContext
-            FilRougeContext dbContext = new FilRougeContext();
-            //retourner la lister
-            return dbContext.Candidat.ToList();
-          
+            using (FilRougeContext dbContext = new FilRougeContext())
+            {
+                //retourner la liste
+                return dbContext.Candidats.ToList();
+            }
         }
-        //retourne un candidat dont l'id est passé en paramètre
+
+        /// <summary>
+        /// retourne un candidat dont l'id est passé en paramètre
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Candidat GetCandidateById(int id)
         {
-            //connexion avec dbContext
-            FilRougeContext dbContext = new FilRougeContext();
             //retourner un candidat avec son id comme paramètre
             return GetCandidates().Where(c => c.IdCandidat == id).SingleOrDefault();
             

@@ -1,16 +1,19 @@
-﻿using System;
+﻿using FilRouge.Domain.Entities;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
 
-namespace FilRouge.Domain.Entities
+namespace FilRouge.web.ViewModel
 {
-    public partial class Reponse
+    public class ReponseViewModel
     {
+        //à faire!!!
+        public List<ReponseViewModel> Reponses { get; set; }
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdReponse { get; set; }
@@ -30,9 +33,6 @@ namespace FilRouge.Domain.Entities
 
         public virtual Quiz Quiz { get; set; }
         public virtual Question Question { get; set; }
-        public virtual QuestionOption QuestionOption {get; set;}
+        public virtual QuestionOption QuestionOption { get; set; }
     }
 }
-//IdQuiz
-//IDQuestion
-//IdUsers

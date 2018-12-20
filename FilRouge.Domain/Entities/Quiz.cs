@@ -17,7 +17,6 @@ namespace FilRouge.Domain.Entities
 
         public string NomQuiz { get; set; }
         public int NombreQuestion { get; set; }
-        //public string NomTech { get; set; }
         public int IdCandidat { get; set; }
 
         [ForeignKey("Niveau")]
@@ -30,7 +29,7 @@ namespace FilRouge.Domain.Entities
         public virtual Niveau Niveau { get; set; }
         public virtual Technologie Technologie { get; set; }
 
-        public virtual ICollection<Question> Questions { get; set; }
+        //public virtual ICollection<Question> Questions { get; set; }
         public virtual ICollection<Reponse> Reponses { get; set; }
     }
 }

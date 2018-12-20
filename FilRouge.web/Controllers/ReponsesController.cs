@@ -17,7 +17,7 @@ namespace FilRouge.web.Controllers
         // GET: Reponses
         public ActionResult Index()
         {
-            var reponse = db.Reponse.Include(r => r.Question);
+            var reponse = db.Reponses.Include(r => r.Question);
             return View(reponse.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reponse reponse = db.Reponse.Find(id);
+            Reponse reponse = db.Reponses.Find(id);
             if (reponse == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,7 @@ namespace FilRouge.web.Controllers
         // GET: Reponses/Create
         public ActionResult Create()
         {
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion");
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion");
             return View();
         }
 
@@ -52,12 +52,12 @@ namespace FilRouge.web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Reponse.Add(reponse);
+                db.Reponses.Add(reponse);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion", reponse.IdQuestion);
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion", reponse.IdQuestion);
             return View(reponse);
         }
 
@@ -68,12 +68,12 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reponse reponse = db.Reponse.Find(id);
+            Reponse reponse = db.Reponses.Find(id);
             if (reponse == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion", reponse.IdQuestion);
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion", reponse.IdQuestion);
             return View(reponse);
         }
 
@@ -90,7 +90,7 @@ namespace FilRouge.web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdQuestion = new SelectList(db.Question, "IdQuestion", "LibelleQuestion", reponse.IdQuestion);
+            ViewBag.IdQuestion = new SelectList(db.Questions, "IdQuestion", "LibelleQuestion", reponse.IdQuestion);
             return View(reponse);
         }
 
@@ -101,7 +101,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reponse reponse = db.Reponse.Find(id);
+            Reponse reponse = db.Reponses.Find(id);
             if (reponse == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace FilRouge.web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Reponse reponse = db.Reponse.Find(id);
-            db.Reponse.Remove(reponse);
+            Reponse reponse = db.Reponses.Find(id);
+            db.Reponses.Remove(reponse);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

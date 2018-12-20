@@ -17,7 +17,7 @@ namespace FilRouge.web.Controllers
         // GET: Questions
         public ActionResult Index()
         {
-            var question = db.Question.Include(q => q.Niveau);
+            var question = db.Questions.Include(q => q.Niveau);
             return View(question.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Question.Find(id);
+            Question question = db.Questions.Find(id);
             if (question == null)
             {
                 return HttpNotFound();
@@ -39,7 +39,7 @@ namespace FilRouge.web.Controllers
         // GET: Questions/Create
         public ActionResult Create()
         {
-            ViewBag.IdNiveau = new SelectList(db.Niveau, "IdNiveau", "NomNiveau");
+            ViewBag.IdNiveau = new SelectList(db.Niveaux, "IdNiveau", "NomNiveau");
             return View();
         }
 
@@ -52,12 +52,12 @@ namespace FilRouge.web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Question.Add(question);
+                db.Questions.Add(question);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdNiveau = new SelectList(db.Niveau, "IdNiveau", "NomNiveau", question.IdNiveau);
+            ViewBag.IdNiveau = new SelectList(db.Niveaux, "IdNiveau", "NomNiveau", question.IdNiveau);
             return View(question);
         }
 
@@ -68,12 +68,12 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Question.Find(id);
+            Question question = db.Questions.Find(id);
             if (question == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.IdNiveau = new SelectList(db.Niveau, "IdNiveau", "NomNiveau", question.IdNiveau);
+            ViewBag.IdNiveau = new SelectList(db.Niveaux, "IdNiveau", "NomNiveau", question.IdNiveau);
             return View(question);
         }
 
@@ -90,7 +90,7 @@ namespace FilRouge.web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdNiveau = new SelectList(db.Niveau, "IdNiveau", "NomNiveau", question.IdNiveau);
+            ViewBag.IdNiveau = new SelectList(db.Niveaux, "IdNiveau", "NomNiveau", question.IdNiveau);
             return View(question);
         }
 
@@ -101,7 +101,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Question question = db.Question.Find(id);
+            Question question = db.Questions.Find(id);
             if (question == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace FilRouge.web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Question question = db.Question.Find(id);
-            db.Question.Remove(question);
+            Question question = db.Questions.Find(id);
+            db.Questions.Remove(question);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

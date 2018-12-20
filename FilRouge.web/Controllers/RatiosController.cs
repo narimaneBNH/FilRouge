@@ -17,7 +17,7 @@ namespace FilRouge.web.Controllers
         // GET: Ratios
         public ActionResult Index()
         {
-            return View(db.Ratio.ToList());
+            return View(db.Ratios.ToList());
         }
 
         // GET: Ratios/Details/5
@@ -27,7 +27,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ratio ratio = db.Ratio.Find(id);
+            Ratio ratio = db.Ratios.Find(id);
             if (ratio == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace FilRouge.web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Ratio.Add(ratio);
+                db.Ratios.Add(ratio);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ratio ratio = db.Ratio.Find(id);
+            Ratio ratio = db.Ratios.Find(id);
             if (ratio == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ratio ratio = db.Ratio.Find(id);
+            Ratio ratio = db.Ratios.Find(id);
             if (ratio == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace FilRouge.web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ratio ratio = db.Ratio.Find(id);
-            db.Ratio.Remove(ratio);
+            Ratio ratio = db.Ratios.Find(id);
+            db.Ratios.Remove(ratio);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

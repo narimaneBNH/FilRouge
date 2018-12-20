@@ -185,13 +185,9 @@
     <Compile Include="Entities\Technologie.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Identity\IdentityConfig.cs" />
-    <Compile Include="Migrations\201811261402251_FilRougeDataBase.cs" />
-    <Compile Include="Migrations\201811261402251_FilRougeDataBase.Designer.cs">
-      <DependentUpon>201811261402251_FilRougeDataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812141527346_IdentityMigration.cs" />
-    <Compile Include="Migrations\201812141527346_IdentityMigration.Designer.cs">
-      <DependentUpon>201812141527346_IdentityMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201812190853330_InitDataBase.cs" />
+    <Compile Include="Migrations\201812190853330_InitDataBase.Designer.cs">
+      <DependentUpon>201812190853330_InitDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -211,11 +207,8 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811261402251_FilRougeDataBase.resx">
-      <DependentUpon>201811261402251_FilRougeDataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812141527346_IdentityMigration.resx">
-      <DependentUpon>201812141527346_IdentityMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812190853330_InitDataBase.resx">
+      <DependentUpon>201812190853330_InitDataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

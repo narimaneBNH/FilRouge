@@ -17,7 +17,7 @@ namespace FilRouge.web.Controllers
         // GET: Niveaux
         public ActionResult Index()
         {
-            return View(db.Niveau.ToList());
+            return View(db.Niveaux.ToList());
         }
 
         // GET: Niveaux/Details/5
@@ -27,7 +27,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Niveau niveau = db.Niveau.Find(id);
+            Niveau niveau = db.Niveaux.Find(id);
             if (niveau == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace FilRouge.web.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Niveau.Add(niveau);
+                db.Niveaux.Add(niveau);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Niveau niveau = db.Niveau.Find(id);
+            Niveau niveau = db.Niveaux.Find(id);
             if (niveau == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace FilRouge.web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Niveau niveau = db.Niveau.Find(id);
+            Niveau niveau = db.Niveaux.Find(id);
             if (niveau == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace FilRouge.web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Niveau niveau = db.Niveau.Find(id);
-            db.Niveau.Remove(niveau);
+            Niveau niveau = db.Niveaux.Find(id);
+            db.Niveaux.Remove(niveau);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

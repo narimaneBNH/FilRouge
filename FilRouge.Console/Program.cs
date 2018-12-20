@@ -12,19 +12,21 @@ namespace FilRouge.Console
         static void Main(string[] args)
         {
             //définir les modèles
-            Candidat newCandidat = new Candidat()
+            /*Candidat newCandidat = new Candidat()
             {
-                NomCandidat = "Duval",
-                PrenomCandidat = "Michel",
+                NomCandidat = "Benhellal",
+                PrenomCandidat = "Narimane",
                 Telephone = "0214253698",
-                Mail = "michou@gmail.com"
+                Mail = "nari@gmail.com"
             };
             CandidateService newCandidatService = new CandidateService();
             newCandidatService.AddNewCandidate(newCandidat);
             foreach (var x in newCandidatService.GetCandidates())
             {
                 System.Console.WriteLine(x.NomCandidat);
-            }
+            }*/
+            CandidateService newCandidatService = new CandidateService();
+            System.Console.WriteLine(newCandidatService.GetCandidateById(1).NomCandidat);
 
             System.Console.ReadKey();
 
