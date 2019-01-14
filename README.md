@@ -1,3 +1,4 @@
+
 # FilRouge
 
 Le directeur d'une agence de recrutement vous a solliciter car il souhaite disposer d'un outil permettant à ses agents de recrutement de faire passer des tests "techniques" aux candidats pour s’assurer de leurs compétences, avant de les proposer à ses clients.
@@ -22,9 +23,9 @@ Quiz \ Niveau
 -Confirmé
 -Expérimenté
 
-***Junior*** :                  
-70 % junior       
-20 % confirmé                  
+***Junior*** :
+70 % junior
+20 % confirmé
 10 % Expérimenté             
 
 ***Confirmé*** : 
