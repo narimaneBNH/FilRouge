@@ -22,12 +22,21 @@ Quiz \ Niveau
 -Confirmé
 -Expérimenté
 
-***Junior***          ***Confirmé***        ***Expérimenté***
-70 % junior           25% junior            10% junior
-20 % confirmé         50% confirmé          40% confirmé
-10 % Expérimenté      25% Expérimenté       50% Expérimenté
+***Junior*** :                  
+70 % junior       
+20 % confirmé                  
+10 % Expérimenté             
 
- 
+***Confirmé*** : 
+ 25% junior
+ 50% confirmé
+ 25% Expérimenté
+ 
+ ***Expérimenté*** :
+ 10% junior
+  40% confirmé
+  50% Expérimenté
+  
 Indication des formateurs pour ces ratios :
 Afin de faciliter le développement de l'application, ces taux peuvent être utilisés pour toutes les types de technologies créés dans l'application. Eviter cependant de "hard-coder" ces valeurs, préférez l'utilisation d'une table de paramétrage, voire d'un fichier de configuration.
  
